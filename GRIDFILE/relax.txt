@@ -1,0 +1,17 @@
+PATH : chromeDriver.exe
+
+(CMD)    HUB : java -Dwebdriver.chrome.driver=PATH -jar selenium-server-standalone-3.141.59.jar -role hub -hubConfig hub-conf.json
+
+(CMD) NODE : java -Dwebdriver.chrome.driver=PATH -jar selenium-server-standalone-3.141.59.jar -role node -nodeConfig win-node-conf.json -hub http://localhost:4444/grid/register/
+
+
+Önce Hub 'mýzý oluþturduk Hub dan kastýðýmýz yönlendirici kontrol eden virtual bilgisayar gibi düþünün 
+(yada aðaç yapýsýndaki Root-Kök gibi)
+
+Hub ayaða kalkýnca http://localhost:4444   üzerinden kontrol edebilirsiniz(kendi fake Ip de üretiyor)
+
+sonra 2. bir cmd ile Node oluþturacaðýz ve Node muzu Hub'a baðlayacaðýz
+
+iþlem bitince http://localhost:4444/grid/console dan bakabilirsiniz default olarak 11 adet browser sürümü ayakta,
+
+node larý artýrabilirsiniz tabi :))
